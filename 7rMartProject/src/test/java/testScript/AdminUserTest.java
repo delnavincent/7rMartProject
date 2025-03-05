@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.AdminUserPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -35,7 +36,7 @@ public class AdminUserTest extends Base {
 
 		String expectedResult = "Alert!";
 		String actualResult = adminUser1.getTextFromNewUserAlert();
-		Assert.assertEquals(actualResult, expectedResult, "user is unable to add new users");
+		Assert.assertEquals(actualResult, expectedResult, Messages.ADDNEWUSERERROR);
 
 	}
 
@@ -59,8 +60,7 @@ public class AdminUserTest extends Base {
 		adminUser1.clickOnSearchButton();
 
 		boolean isSubTitleOfSearchAdminUserPageDisplayed = adminUser1.isSubTitleOfSearchAdminUserPageIsDisplayed();
-		Assert.assertTrue(isSubTitleOfSearchAdminUserPageDisplayed,
-				"user is unable to search users in admin users list");
+		Assert.assertTrue(isSubTitleOfSearchAdminUserPageDisplayed, Messages.SEARCHNEWUSERERROR);
 
 	}
 
@@ -80,7 +80,7 @@ public class AdminUserTest extends Base {
 		adminUser1.clickOnResetButton();
 
 		boolean isTitleDisplayedOnAdminUsersResetPage = adminUser1.isTitleDisplayedOnAdminUsersResetPage();
-		Assert.assertTrue(isTitleDisplayedOnAdminUsersResetPage, "user is unable to refresh the admin users page");
+		Assert.assertTrue(isTitleDisplayedOnAdminUsersResetPage, Messages.REFRESHADMINUSERPAGEERROR);
 
 	}
 

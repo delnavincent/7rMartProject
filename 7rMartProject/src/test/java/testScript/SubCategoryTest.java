@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.LoginPage;
 import pages.SubCategoryPage;
 import utilities.ExcelUtility;
@@ -33,7 +34,7 @@ public class SubCategoryTest extends Base {
 
 		String expectedResult = "Alert!";
 		String actualResult = subCategory.getTextFromSubcategoryAlert();
-		Assert.assertEquals(actualResult, expectedResult, "user was unable to add new items to subcategory list");
+		Assert.assertEquals(actualResult, expectedResult, Messages.ADDNEWITEMTOSUBCATEGORYERROR);
 
 	}
 
@@ -56,7 +57,7 @@ public class SubCategoryTest extends Base {
 		subCategory.clickOnSearchButton();
 
 		boolean isSubTitleDisplayed = subCategory.isSubTitleDisplayedOnSearchSubCategoryPage();
-		Assert.assertTrue(isSubTitleDisplayed, "user is unable to search subcategory list");
+		Assert.assertTrue(isSubTitleDisplayed, Messages.SEARCHITEMINSUBCATEGORYERROR);
 
 	}
 
@@ -75,7 +76,7 @@ public class SubCategoryTest extends Base {
 		subCategory.clickOnResetButton();
 
 		boolean isTitleDisplayedOnResetPage = subCategory.isTitleDisplayedOnResetPage();
-		Assert.assertTrue(isTitleDisplayedOnResetPage, "user is unable to refresh the subcategory page");
+		Assert.assertTrue(isTitleDisplayedOnResetPage, Messages.REFRESHSUBCATEGORYPAGEERROR);
 
 	}
 

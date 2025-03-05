@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -27,7 +28,7 @@ public class HomeTest extends Base {
 		home.clickOnLogOutField();
 
 		boolean isSignButtonEnabled = home.isSignInButtonEnabled();
-		Assert.assertTrue(isSignButtonEnabled, "user is unable to logout from the Home page");
+		Assert.assertTrue(isSignButtonEnabled, Messages.LOGOUTERROR);
 	}
 
 }

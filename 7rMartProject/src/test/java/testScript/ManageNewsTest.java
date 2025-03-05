@@ -6,6 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
+import constants.Messages;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
@@ -31,7 +32,7 @@ public class ManageNewsTest extends Base {
 
 		String expectedResult = "Alert!";
 		String actualResult = manageNews.getTextFromAlert();
-		Assert.assertEquals(actualResult, expectedResult, "user was unable to create new news!");
+		Assert.assertEquals(actualResult, expectedResult, Messages.CREATENEWNEWSERROR);
 
 	}
 
@@ -53,7 +54,7 @@ public class ManageNewsTest extends Base {
 		manageNews.clickOnSearchButton();
 
 		boolean isSubTitleOfSearchManageNewsDisplayed = manageNews.isSubTitleOfSearchManageNewsPageDisplayed();
-		Assert.assertTrue(isSubTitleOfSearchManageNewsDisplayed, "user is unable to search news");
+		Assert.assertTrue(isSubTitleOfSearchManageNewsDisplayed, Messages.SEARCHNEWSERROR);
 
 	}
 
@@ -72,7 +73,7 @@ public class ManageNewsTest extends Base {
 		manageNews.clickOnResetButton();
 
 		boolean isTitleOfManageNewsResetPageDisplayed = manageNews.isTitleOfManageNewsResetPageDisplayed();
-		Assert.assertTrue(isTitleOfManageNewsResetPageDisplayed, "user is unable to refresh the manage news page");
+		Assert.assertTrue(isTitleOfManageNewsResetPageDisplayed, Messages.REFRESHMANAGENEWSPAGEERROR);
 
 	}
 
