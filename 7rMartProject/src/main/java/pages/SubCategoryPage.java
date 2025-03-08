@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constants.Constants;
+
 public class SubCategoryPage {
 	public WebDriver driver;
 
@@ -56,7 +58,7 @@ public class SubCategoryPage {
 
 	public void selectCategoryFromCategoryField() {
 		Select select = new Select(selectCategoryField);
-		select.selectByIndex(5);
+		select.selectByIndex(4);
 	}
 
 	public void enterSubCategoryTextOnSubCategoryfield(String subcategoryText) {
@@ -65,7 +67,7 @@ public class SubCategoryPage {
 	}
 
 	public void chooseFileOnImageField() {
-		imageUpload.sendKeys("C:\\Users\\hp\\eclipse-workspace\\7rMartProject\\src\\test\\resources\\mobile.jpg");
+		imageUpload.sendKeys(Constants.IMAGEFILE);
 
 	}
 
