@@ -38,7 +38,7 @@ public class LoginTest extends Base {
 		login.clickOnSignInButton();
 
 		boolean isTitleDisplayed = login.isTitleDisplayed();
-		Assert.assertTrue(isTitleDisplayed, Messages.INVALIDPASSWORDERROR);
+		Assert.assertTrue(isTitleDisplayed, Messages.INVALIDPASSWORDCREDENTIALERROR);
 	}
 
 	@Test(priority = 3, description = "user login with invalid username and valid password")
@@ -52,7 +52,7 @@ public class LoginTest extends Base {
 		login.clickOnSignInButton();
 
 		boolean isTitleDisplayed = login.isTitleDisplayed();
-		Assert.assertTrue(isTitleDisplayed, Messages.INVALIDUSERNAMEERROR);
+		Assert.assertTrue(isTitleDisplayed, Messages.INVALIDUSERNAMECREDENTIALERROR);
 
 	}
 

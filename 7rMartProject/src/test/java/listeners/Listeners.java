@@ -11,19 +11,17 @@ import com.aventstack.extentreports.Status;
 
 import automationCore.Base;
 import utilities.ExtentReportUtility;
+
 //detailed report 
 public class Listeners extends Base implements ITestListener {
 	ExtentTest test;
 
-	ExtentReports extent=ExtentReportUtility.createExtentReports();
+	ExtentReports extent = ExtentReportUtility.createExtentReports();
 
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();//to avoid overlapping of testcases
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();// to avoid overlapping of testcases
 
-
-//invoke before test execution,ITestResult is a interface
-	public void onTestStart(ITestResult result) {  
-
-
+//invoke before test method executes,ITestResult is an interface
+	public void onTestStart(ITestResult result) {
 
 		ITestListener.super.onTestStart(result);
 
@@ -31,29 +29,19 @@ public class Listeners extends Base implements ITestListener {
 
 		extentTest.set(test);
 
-
-
 	}
 
-
 //invoke when test method success
-	public void onTestSuccess(ITestResult result) { 
-
-
+	public void onTestSuccess(ITestResult result) {
 
 		ITestListener.super.onTestSuccess(result);
 
 		extentTest.get().log(Status.PASS, "Test Passed");
 
-
-
 	}
-
-
-
-	public void onTestFailure(ITestResult result) { //Called when a test method fails.
-
-
+	 
+	// Called when a test method fails.
+	public void onTestFailure(ITestResult result) {
 
 		ITestListener.super.onTestFailure(result);
 
@@ -73,31 +61,21 @@ public class Listeners extends Base implements ITestListener {
 
 		} catch (IllegalArgumentException e) {
 
-
-
 			e.printStackTrace();
 
 		} catch (IllegalAccessException e) {
-
-
 
 			e.printStackTrace();
 
 		} catch (NoSuchFieldException e) {
 
-
-
 			e.printStackTrace();
 
 		} catch (SecurityException e) {
 
-
-
 			e.printStackTrace();
 
 		}
-
-
 
 		try {
 
@@ -110,12 +88,9 @@ public class Listeners extends Base implements ITestListener {
 		}
 
 	}
-
-
-
-
-
-	public void onTestSkipped(ITestResult result) { //called when test method skipped
+	
+	// called when test method skipped 
+	public void onTestSkipped(ITestResult result) { 
 
 		ITestListener.super.onTestSkipped(result);
 
@@ -123,11 +98,7 @@ public class Listeners extends Base implements ITestListener {
 
 		String testMethodName = result.getMethod().getMethodName();
 
-
-
 	}
-
-
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 
@@ -135,45 +106,24 @@ public class Listeners extends Base implements ITestListener {
 
 	}
 
-
-
 	public void onTestFailedWithTimeout(ITestResult result) {
-
-
 
 		ITestListener.super.onTestFailedWithTimeout(result);
 
 	}
 
-
-
-	public void onStart(ITestContext context) { 
-
-
+	public void onStart(ITestContext context) {
 
 		ITestListener.super.onStart(context);
 
 	}
 
-
-
 	public void onFinish(ITestContext context) {
-
-
 
 		ITestListener.super.onFinish(context);
 
-		extent.flush();//confirm whether reports are generated correctly
-
-
-
-
-
-
-
-
+		extent.flush();// confirm whether reports are generated correctly
 
 	}
-
 
 }

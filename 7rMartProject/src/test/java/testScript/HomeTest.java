@@ -28,7 +28,7 @@ public class HomeTest extends Base {
 		home.clickOnLogOutField();
 
 		boolean isSignButtonEnabled = home.isSignInButtonEnabled();
-		Assert.assertTrue(isSignButtonEnabled, Messages.LOGOUTERROR);
+		Assert.assertTrue(isSignButtonEnabled, Messages.LOGOUTFROMHOMEPAGEERROR);
 	}
 
 }
