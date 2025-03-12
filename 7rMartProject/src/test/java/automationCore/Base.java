@@ -17,7 +17,7 @@ import utilities.ScreenshotUtility;
 public class Base {
 	public WebDriver driver;
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception {
 		if (browser.equalsIgnoreCase("chrome")) {
@@ -39,7 +39,7 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	// This method handles quitting the WebDriver after the test execution
 	// It also captures a screenshot if the test fails
 	// ITestResult-->interface in TestNG that manages lifecycle of a testcase result
@@ -59,7 +59,8 @@ public class Base {
 
 		}
 
-		// Quit the WebDriver session
+		
+	// Quit the WebDriver session
 		driver.quit();
 
 	}

@@ -12,7 +12,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-	@Test(priority = 1, description = " verification with valid credentials")
+	@Test(priority = 1, description = " verification with valid credentials",groups= {"smoke"})
 	public void verifyUserLoginWithValidUsernameAndValidPassword() throws IOException {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
@@ -26,7 +26,7 @@ public class LoginTest extends Base {
 		Assert.assertTrue(isDashBoardDisplayed, Messages.VALIDCREDENTIALERROR);
 	}
 
-	@Test(priority = 4, description = "user login verification with valid username and invalid password")
+	@Test(priority = 4, description = "user login verification with valid username and invalid password",groups= {"smoke"})
 	public void verifyUserLoginWithValidUsernameAndInvalidPassword() throws IOException {
 
 		String username = ExcelUtility.readStringData(2, 0, "LoginPage");
