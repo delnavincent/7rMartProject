@@ -13,7 +13,7 @@ import utilities.ExcelUtility;
 
 public class HomeTest extends Base {
 
-	@Test(description = "verification of user can log out from the home page")
+	@Test(description = "verification of user can log out from the home page",retryAnalyzer=retry.ReTry.class)
 	public void verifyWhetherUserCanLogOutFromHomePageAfterLoginToThePage() throws IOException {
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
