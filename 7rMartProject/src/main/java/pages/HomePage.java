@@ -20,13 +20,15 @@ public class HomePage {
 	@FindBy(xpath="//button[@type='submit']")
 	private WebElement SignInButton;
 
-	public void clickOnAdminField() {
+	public HomePage clickOnAdminField() {
 		adminField.click();
+		return this;
 
 	}
 
-	public void clickOnLogOutField() {
+	public LoginPage clickOnLogOutField() {
 		logOutField.click();
+		return new LoginPage(driver);
 	}
 	public boolean isSignInButtonEnabled() {
 		return SignInButton.isEnabled();

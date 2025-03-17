@@ -6,19 +6,11 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
 public class ReTry implements IRetryAnalyzer {
-private static final Logger LOG = (Logger) LogManager.getLogger("Retry.class"); 
-
-	
+	private static final Logger LOG = (Logger) LogManager.getLogger("Retry.class");
 
 	private static final int maxTry = 2;
 
-	
-
 	private int count = 0;
-
-	
-
-
 
 	@Override
 
@@ -43,8 +35,6 @@ private static final Logger LOG = (Logger) LogManager.getLogger("Retry.class");
 		return false;
 
 	}
-
-
 
 	public String getResultStatusName(final int status) {
 
@@ -71,7 +61,5 @@ private static final Logger LOG = (Logger) LogManager.getLogger("Retry.class");
 		return resultName;
 
 	}
-
-
 
 }

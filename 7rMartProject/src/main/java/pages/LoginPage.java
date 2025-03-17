@@ -27,21 +27,25 @@ public class LoginPage {
 	private WebElement title;
 	
 
-	public void enterUsernameOnUsernameField(String username) {
+	public LoginPage enterUsernameOnUsernameField(String username) {
 		userNameField.sendKeys(username);
+		return this;
 	}
 
-	public void enterPasswordOnPasswordField(String password) {
+	public LoginPage enterPasswordOnPasswordField(String password) {
 		passwordField.sendKeys(password);
+		return this;
 	}
 
-	public void clickOnCheckbox() {
+	public LoginPage clickOnCheckbox() {
 		rememberMeCheckbox.click();
+		return this;
 
 	}
 
-	public void clickOnSignInButton() {
+	public HomePage clickOnSignInButton() {
 		signInButton.click();
+		return new HomePage(driver);
 	}
 	public boolean isDashBoardDisplayed() {
 		return dashBoard.isDisplayed();
