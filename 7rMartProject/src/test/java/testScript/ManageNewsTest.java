@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import automationCore.Base;
 import constants.Messages;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
@@ -15,20 +16,15 @@ public class ManageNewsTest extends Base {
 
 	@Test(priority = 1, description = "verification of user can enter news in ManageNews by clicking New button")
 	public void verifyWhetherUserCanEnterNewNewsInformationsInManageNewsField() throws IOException {
+		HomePage home;
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 		LoginPage login = new LoginPage(driver);
-		login.enterUsernameOnUsernameField(username);
-		login.enterPasswordOnPasswordField(password);
-		login.clickOnCheckbox();
-		login.clickOnSignInButton();
-
-		ManageNewsPage manageNews = new ManageNewsPage(driver);
-		manageNews.clickOnManageNewsField();
-		manageNews.clickOnNewField();
+		login.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnCheckbox();
+		home = login.clickOnSignInButton();
+		ManageNewsPage manageNews = home.clickOnManageNewsField();
 		String news = ExcelUtility.readStringData(1, 0, "ManageNewsPage");
-		manageNews.enterTheNewsOnNewsField(news);
-		manageNews.clickOnSaveButton();
+		manageNews.clickOnNewField().enterTheNewsOnNewsField(news).clickOnSaveButton();
 
 		String expectedResult = "Alert!";
 		String actualResult = manageNews.getTextFromAlert();
@@ -38,21 +34,15 @@ public class ManageNewsTest extends Base {
 
 	@Test(priority = 2, description = "verification of user can search news in ManageNews by clicking Search button ")
 	public void verifyWhetherUserIsAbleToSearchNewlyAddedNewsInManageNewsField() throws IOException {
+		HomePage home;
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 		LoginPage login = new LoginPage(driver);
-		login.enterUsernameOnUsernameField(username);
-		login.enterPasswordOnPasswordField(password);
-		login.clickOnCheckbox();
-		login.clickOnSignInButton();
-
-		ManageNewsPage manageNews = new ManageNewsPage(driver);
-		manageNews.clickOnManageNewsField();
-		manageNews.clickOnSearchField();
+		login.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnCheckbox();
+		home = login.clickOnSignInButton();
+		ManageNewsPage manageNews = home.clickOnManageNewsField();
 		String news = ExcelUtility.readStringData(1, 0, "ManageNewsPage");
-		manageNews.enterTheNewsToSearch(news);
-		manageNews.clickOnSearchButton();
-
+		manageNews.clickOnSearchField().enterTheNewsToSearch(news).clickOnSearchButton();
 		boolean isSubTitleOfSearchManageNewsDisplayed = manageNews.isSubTitleOfSearchManageNewsPageDisplayed();
 		Assert.assertTrue(isSubTitleOfSearchManageNewsDisplayed, Messages.SEARCHNEWSERROR);
 
@@ -60,17 +50,22 @@ public class ManageNewsTest extends Base {
 
 	@Test(priority = 3, description = "verification of user can refresh ManageNews page by clicking Reset  button")
 	public void verifyWhetherUserIsAbleToRefreshManageNewsPageUsingResetButton() throws IOException {
+		HomePage home;
 		String username = ExcelUtility.readStringData(1, 0, "LoginPage");
 		String password = ExcelUtility.readStringData(1, 1, "LoginPage");
 		LoginPage login = new LoginPage(driver);
-		login.enterUsernameOnUsernameField(username);
+		login.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnCheckbox();
+		home = login.clickOnSignInButton();
+		ManageNewsPage manageNews = home.clickOnManageNewsField();
+		manageNews.clickOnResetButton();
+		/*login.enterUsernameOnUsernameField(username);
 		login.enterPasswordOnPasswordField(password);
 		login.clickOnCheckbox();
 		login.clickOnSignInButton();
 
 		ManageNewsPage manageNews = new ManageNewsPage(driver);
 		manageNews.clickOnManageNewsField();
-		manageNews.clickOnResetButton();
+		manageNews.clickOnResetButton();*/
 
 		boolean isTitleOfManageNewsResetPageDisplayed = manageNews.isTitleOfManageNewsResetPageDisplayed();
 		Assert.assertTrue(isTitleOfManageNewsResetPageDisplayed, Messages.REFRESHMANAGENEWSPAGEERROR);

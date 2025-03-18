@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-18T06:52:49 IST" name="Suite" finished-at="2025-03-18T06:52:55 IST" duration-ms="6417">
+  <suite started-at="2025-03-18T14:37:42 IST" name="Suite" finished-at="2025-03-18T14:37:49 IST" duration-ms="7096">
     <groups>
     </groups>
-    <test started-at="2025-03-18T06:52:49 IST" name="Test" finished-at="2025-03-18T06:52:55 IST" duration-ms="6417">
-      <class name="testScript.SubCategoryTest">
-        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.SubCategoryTest@28cda624]" started-at="2025-03-18T06:52:49 IST" name="initializeBrowser" finished-at="2025-03-18T06:52:52 IST" duration-ms="2693" status="PASS">
+    <test started-at="2025-03-18T14:37:42 IST" name="Test" finished-at="2025-03-18T14:37:49 IST" duration-ms="7096">
+      <class name="testScript.AdminUserTest">
+        <test-method is-config="true" signature="initializeBrowser(java.lang.String)[pri:0, instance:testScript.AdminUserTest@28cda624]" started-at="2025-03-18T14:37:42 IST" name="initializeBrowser" finished-at="2025-03-18T14:37:45 IST" duration-ms="3035" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,22 +18,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initializeBrowser -->
-        <test-method signature="verifyWhetherUserIsAbleToRefreshSubCategoryPageUsingResetButton()[pri:3, instance:testScript.SubCategoryTest@28cda624]" started-at="2025-03-18T06:52:52 IST" name="verifyWhetherUserIsAbleToRefreshSubCategoryPageUsingResetButton" description="verification of user can refresh subcategory page by clicking reset button" finished-at="2025-03-18T06:52:55 IST" duration-ms="3338" status="PASS">
+        <test-method signature="verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton()[pri:3, instance:testScript.AdminUserTest@28cda624]" started-at="2025-03-18T14:37:45 IST" name="verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton" description="verification of user can refresh AdminUsers page by clicking Reset button" finished-at="2025-03-18T14:37:48 IST" duration-ms="3649" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyWhetherUserIsAbleToRefreshSubCategoryPageUsingResetButton -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.SubCategoryTest@28cda624]" started-at="2025-03-18T06:52:55 IST" name="driverQuit" finished-at="2025-03-18T06:52:55 IST" duration-ms="297" status="PASS">
+        </test-method> <!-- verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton -->
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testScript.AdminUserTest@28cda624]" started-at="2025-03-18T14:37:48 IST" name="driverQuit" finished-at="2025-03-18T14:37:49 IST" duration-ms="323" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyWhetherUserIsAbleToRefreshSubCategoryPageUsingResetButton status=SUCCESS method=SubCategoryTest.verifyWhetherUserIsAbleToRefreshSubCategoryPageUsingResetButton()[pri:3, instance:testScript.SubCategoryTest@28cda624] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton status=SUCCESS method=AdminUserTest.verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton()[pri:3, instance:testScript.AdminUserTest@28cda624] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testScript.SubCategoryTest -->
+      </class> <!-- testScript.AdminUserTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

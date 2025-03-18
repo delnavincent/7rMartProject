@@ -36,37 +36,44 @@ public class ManageNewsPage {
 	@FindBy(xpath = "//h1[text()='Manage News']")
 	private WebElement titleOfResetPage;
 
-	public void clickOnManageNewsField() {
+	public ManageNewsPage clickOnManageNewsField() {
 		manageNewsField.click();
+		return new ManageNewsPage(driver);
 	}
 
-	public void clickOnNewField() {
+	public ManageNewsPage clickOnNewField() {
 		newfield.click();
+		return this;
 	}
 
-	public void enterTheNewsOnNewsField(String news) {
+	public ManageNewsPage enterTheNewsOnNewsField(String news) {
 		enterNewsfield.sendKeys(news);
+		return this;
 	}
 
 	public void clickOnSaveButton() {
 		saveButton.click();
 	}
 
-	public void clickOnSearchField() {
+	public ManageNewsPage clickOnSearchField() {
 		searchField.click();
+		return this;
 	}
 
-	public void enterTheNewsToSearch(String news) {
+	public ManageNewsPage enterTheNewsToSearch(String news) {
 		searchNewsText.sendKeys(news);
+		return this;
 	}
 
 	public void clickOnSearchButton() {
 		searchButton.click();
+		
 
 	}
 
-	public void clickOnResetButton() {
+	public ManageNewsPage clickOnResetButton() {
 		resetButton.click();
+		return this;
 	}
 
 	public String getTextFromAlert() {

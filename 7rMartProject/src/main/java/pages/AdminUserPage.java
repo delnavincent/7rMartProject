@@ -46,54 +46,64 @@ public class AdminUserPage {
 	@FindBy(xpath = "//h1[text()='Admin Users']")
 	private WebElement titleOfAdminUsersResetPage;
 
-	public void clickOnAdminUserField() {
+	public HomePage clickOnAdminUserField() {
 		adminUserField.click();
+		return new HomePage(driver);
 	}
 
-	public void clickOnManageUserField() {
+	public AdminUserPage clickOnManageUserField() {
 		manageUsersField.click();
+		return new AdminUserPage(driver);
 	}
 
-	public void clickOnNewUserField() {
+	public AdminUserPage clickOnNewUserField() {
 		newUserField.click();
+		return this;
 	}
 
-	public void enterAdminUsernameOnUsernameField(String adminUsername) {
+	public AdminUserPage enterAdminUsernameOnUsernameField(String adminUsername) {
 		adminUsernameField.sendKeys(adminUsername);
+		return this;
 	}
 
-	public void enterAdminPasswordOnPasswordField(String adminPassword) {
+	public AdminUserPage enterAdminPasswordOnPasswordField(String adminPassword) {
 		adminPasswordField.sendKeys(adminPassword);
+		return this;
 	}
 
-	public void selectUserTypeOnUserTypeField() {
+	public AdminUserPage selectUserTypeOnUserTypeField() {
 		Select select = new Select(userTypeField);
 		select.selectByValue("staff");
+		return this;
 	}
 
 	public void clickOnSaveButton() {
 		saveButton.click();
 	}
 
-	public void clickOnSearchuserField() {
+	public AdminUserPage clickOnSearchuserField() {
 		searchUserField.click();
+		return this;
 	}
 
-	public void enterAdminUsernameToSearch(String adminUsername) {
+	public AdminUserPage enterAdminUsernameToSearch(String adminUsername) {
 		searchUsername.sendKeys(adminUsername);
+		return this;
 	}
 
-	public void selectTheUserTypeToSearch() {
+	public AdminUserPage selectTheUserTypeToSearch() {
 		Select select = new Select(searchUserType);
 		select.selectByVisibleText("Staff");
+		return this;
 	}
 
 	public void clickOnSearchButton() {
 		searchButton.click();
 	}
 
-	public void clickOnResetButton() {
+	public AdminUserPage clickOnResetButton() {
 		resetButton.click();
+		return this;
 	}
 
 	public String getTextFromNewUserAlert() {
