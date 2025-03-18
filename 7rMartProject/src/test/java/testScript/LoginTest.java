@@ -55,6 +55,7 @@ public class LoginTest extends Base {
 		LoginPage login = new LoginPage(driver);
 		login.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnCheckbox()
 				.clickOnSignInButton();
+	
 		boolean isTitleDisplayed = login.isTitleDisplayed();
 		Assert.assertTrue(isTitleDisplayed, Messages.INVALIDCREDENTIALERROR);
 

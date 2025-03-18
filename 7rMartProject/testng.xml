@@ -9,9 +9,9 @@
 
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="testScript.HomeTest">
+			<class name="testScript.SubCategoryTest">
 			<methods>
-			<include name="verifyWhetherUserCanLogOutFromHomePageAfterLoginToThePage"></include>
+			<include name="verifyWhetherUserIsAbleToRefreshSubCategoryPageUsingResetButton"></include>
 			</methods>
 				
 			</class>

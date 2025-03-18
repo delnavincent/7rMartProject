@@ -17,19 +17,28 @@ public class HomePage {
 	private WebElement adminField;
 	@FindBy(xpath = "//i[@class='ace-icon fa fa-power-off']")
 	private WebElement logOutField;
-	@FindBy(xpath="//button[@type='submit']")
+	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement SignInButton;
+	@FindBy(xpath = "//a[@class=' nav-link']")
+	private WebElement subCategoryField;
+	@FindBy(xpath = "//a[@onclick='click_button(2)']")
+	private WebElement searchfield;
 
 	public HomePage clickOnAdminField() {
 		adminField.click();
 		return this;
-
 	}
 
 	public LoginPage clickOnLogOutField() {
 		logOutField.click();
 		return new LoginPage(driver);
 	}
+
+	public SubCategoryPage clickOnSubCategoryField() {
+		subCategoryField.click();
+		return new SubCategoryPage(driver);
+	}
+
 	public boolean isSignInButtonEnabled() {
 		return SignInButton.isEnabled();
 	}

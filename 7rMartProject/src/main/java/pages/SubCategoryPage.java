@@ -46,48 +46,54 @@ public class SubCategoryPage {
 	@FindBy(xpath = "//h1[text()='List Sub Categories']")
 	private WebElement titleOfResetPage;
 
-	public void clickOnSubCategoryField() {
+	public SubCategoryPage clickOnSubCategoryField() {
 		subCategoryField.click();
-
+		return new SubCategoryPage(driver);
 	}
 
-	public void clickOnNewField() {
+	public SubCategoryPage clickOnNewField() {
 		newfield.click();
+		return this;
 
 	}
 
-	public void selectCategoryFromCategoryField() {
+	public SubCategoryPage selectCategoryFromCategoryField() {
 		Select select = new Select(selectCategoryField);
 		select.selectByIndex(4);
+		return this;
 	}
 
-	public void enterSubCategoryTextOnSubCategoryfield(String subcategoryText) {
+	public SubCategoryPage enterSubCategoryTextOnSubCategoryfield(String subcategoryText) {
 		subCategoryText.sendKeys(subcategoryText);
+		return this;
 
 	}
 
-	public void chooseFileOnImageField() {
+	public SubCategoryPage chooseFileOnImageField() {
 		imageUpload.sendKeys(Constants.IMAGEFILE);
-
+		return this;
 	}
 
 	public void clickOnSaveButton() {
 		saveButton.submit();
 	}
 
-	public void clickOnSearchField() {
+	public SubCategoryPage clickOnSearchField() {
 		searchfield.click();
+		return this; 
 	}
 
-	public void selectCategoryToSearch() {
+	public SubCategoryPage selectCategoryToSearch() {
 		Select select = new Select(selectField);
 		select.selectByIndex(5);
+		return this;
 
 	}
 
-	public void enterSubCategoryTextToSearch(String subcategoryData) {
+	public SubCategoryPage enterSubCategoryTextToSearch(String subcategoryData) {
 
 		searchSubCategorytext.sendKeys(subcategoryData);
+		return this;
 
 	}
 
