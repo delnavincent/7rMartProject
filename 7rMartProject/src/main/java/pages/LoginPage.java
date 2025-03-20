@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class LoginPage {
 	public WebDriver driver;
 
@@ -21,11 +23,10 @@ public class LoginPage {
 	private WebElement rememberMeCheckbox;
 	@FindBy(xpath = "//button[@type='submit']")
 	private WebElement signInButton;
-	@FindBy(xpath="//p[text()='Dashboard']")
+	@FindBy(xpath = "//p[text()='Dashboard']")
 	private WebElement dashBoard;
-	@FindBy(xpath="//b[text()='7rmart supermarket']")
+	@FindBy(xpath = "//b[text()='7rmart supermarket']")
 	private WebElement title;
-	
 
 	public LoginPage enterUsernameOnUsernameField(String username) {
 		userNameField.sendKeys(username);
@@ -38,7 +39,8 @@ public class LoginPage {
 	}
 
 	public LoginPage clickOnCheckbox() {
-		rememberMeCheckbox.click();
+		PageUtility page = new PageUtility();
+		page.handlingCheckbox(rememberMeCheckbox);
 		return this;
 
 	}
@@ -47,9 +49,11 @@ public class LoginPage {
 		signInButton.click();
 		return new HomePage(driver);
 	}
+
 	public boolean isDashBoardDisplayed() {
 		return dashBoard.isDisplayed();
 	}
+
 	public boolean isTitleDisplayed() {
 		return title.isDisplayed();
 	}

@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,6 +104,16 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="testScript.AdminUserTest" class="method navigator-link" hash-for-method="verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton">verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testScript.AdminUserTest" class="method navigator-link" hash-for-method="verifyWhetherUserIsAbleToAddNewUsersToUsersList">verifyWhetherUserIsAbleToAddNewUsersToUsersList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="testScript.AdminUserTest" class="method navigator-link" hash-for-method="verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList">verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -133,6 +143,24 @@
 (verification of user can refresh AdminUsers page by clicking Reset button)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyWhetherUserIsAbleToAddNewUsersToUsersList">
+                  </a> <!-- verifyWhetherUserIsAbleToAddNewUsersToUsersList -->
+                  <span class="method-name">verifyWhetherUserIsAbleToAddNewUsersToUsersList</span>
+                  <em>
+(verification of user can enter new  admin users informations by clicking New button)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList">
+                  </a> <!-- verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList -->
+                  <span class="method-name">verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList</span>
+                  <em>
+(verification of user can search admin users in AdminUsers list by clicking Search button)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
@@ -151,11 +179,7 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testScript.AdminUserTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- testScript.AdminUserTest --&gt;
+      &lt;class name=&quot;testScript.AdminUserTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -195,16 +219,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton')
+data.setCell(0, 1, 'verifyWhetherUserIsAbleToAddNewUsersToUsersList')
 data.setCell(0, 2, 'testScript.AdminUserTest')
-data.setCell(0, 3, 3649);
+data.setCell(0, 3, 5244);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList')
+data.setCell(1, 2, 'testScript.AdminUserTest')
+data.setCell(1, 3, 3005);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton')
+data.setCell(2, 2, 'testScript.AdminUserTest')
+data.setCell(2, 3, 2998);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 3 seconds</span>
+              <span class="suite-total-time">Total running time: 11 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -219,18 +251,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">testScript.AdminUserTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">verifyWhetherUserIsAbleToAddNewUsersToUsersList</span>
-                <br/>
-                <span class="ignored-method-name">verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite" class="panel">
@@ -245,12 +268,36 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <span class="method-name">verifyWhetherUserIsAbleToAddNewUsersToUsersList</span>
+                <span class="method-start">3857 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">driverQuit([TestResult name=verifyWhetherUserIsAbleToAddNewUsersToUsersList status=SUCCESS method=AdminUserTest...)</span>
+                <span class="method-start">9114 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeBrowser(chrome)</span>
+                <span class="method-start">9516 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList</span>
+                <span class="method-start">11359 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">driverQuit([TestResult name=verifyWhetherUsersIsAbleToSearchNewlyAddedUsersInTheNewlyAddedUsersList status=SUCC...)</span>
+                <span class="method-start">14367 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">initializeBrowser(chrome)</span>
+                <span class="method-start">14623 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
                 <span class="method-name">verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton</span>
-                <span class="method-start">3036 ms</span>
+                <span class="method-start">16516 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">driverQuit([TestResult name=verifyUsersIsAbleToRefreshNewlyAddedUsersPageUsingResetButton status=SUCCESS method...)</span>
-                <span class="method-start">6699 ms</span>
+                <span class="method-start">19520 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

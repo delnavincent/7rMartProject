@@ -12,15 +12,13 @@ import com.aventstack.extentreports.Status;
 import automationCore.Base;
 import utilities.ExtentReportUtility;
 
-//detailed report 
 public class Listeners extends Base implements ITestListener {
 	ExtentTest test;
 
 	ExtentReports extent = ExtentReportUtility.createExtentReports();
 
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();// to avoid overlapping of testcases
+	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
-//invoke before test method executes,ITestResult is an interface
 	public void onTestStart(ITestResult result) {
 
 		ITestListener.super.onTestStart(result);
@@ -31,7 +29,6 @@ public class Listeners extends Base implements ITestListener {
 
 	}
 
-//invoke when test method success
 	public void onTestSuccess(ITestResult result) {
 
 		ITestListener.super.onTestSuccess(result);
@@ -39,8 +36,7 @@ public class Listeners extends Base implements ITestListener {
 		extentTest.get().log(Status.PASS, "Test Passed");
 
 	}
-	 
-	// Called when a test method fails.
+
 	public void onTestFailure(ITestResult result) {
 
 		ITestListener.super.onTestFailure(result);
@@ -88,9 +84,8 @@ public class Listeners extends Base implements ITestListener {
 		}
 
 	}
-	
-	// called when test method skipped 
-	public void onTestSkipped(ITestResult result) { 
+
+	public void onTestSkipped(ITestResult result) {
 
 		ITestListener.super.onTestSkipped(result);
 
@@ -122,7 +117,7 @@ public class Listeners extends Base implements ITestListener {
 
 		ITestListener.super.onFinish(context);
 
-		extent.flush();// confirm whether reports are generated correctly
+		extent.flush();
 
 	}
 

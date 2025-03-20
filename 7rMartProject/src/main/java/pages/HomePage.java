@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class HomePage {
 	public WebDriver driver;
 
@@ -27,6 +29,7 @@ public class HomePage {
 	private WebElement adminUserField;
 	@FindBy(xpath = "//p[text()='Manage Users']")
 	private WebElement manageUsersField;
+
 	public HomePage clickOnAdminField() {
 		adminField.click();
 		return this;
@@ -41,10 +44,12 @@ public class HomePage {
 		subCategoryField.click();
 		return new SubCategoryPage(driver);
 	}
+
 	public ManageNewsPage clickOnManageNewsField() {
 		manageNewsField.click();
 		return new ManageNewsPage(driver);
 	}
+
 	public HomePage clickOnAdminUserField() {
 		adminUserField.click();
 		return new HomePage(driver);
@@ -54,7 +59,6 @@ public class HomePage {
 		manageUsersField.click();
 		return new AdminUserPage(driver);
 	}
-	
 
 	public boolean isSignInButtonEnabled() {
 		return SignInButton.isEnabled();

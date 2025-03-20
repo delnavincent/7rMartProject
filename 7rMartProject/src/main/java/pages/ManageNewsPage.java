@@ -67,7 +67,6 @@ public class ManageNewsPage {
 
 	public void clickOnSearchButton() {
 		searchButton.click();
-		
 
 	}
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import constants.Constants;
+import utilities.PageUtility;
 
 public class SubCategoryPage {
 	public WebDriver driver;
@@ -58,8 +59,8 @@ public class SubCategoryPage {
 	}
 
 	public SubCategoryPage selectCategoryFromCategoryField() {
-		Select select = new Select(selectCategoryField);
-		select.selectByIndex(4);
+		PageUtility page = new PageUtility();
+		page.selectDropdownWithIndex(selectCategoryField, 4);
 		return this;
 	}
 
@@ -80,21 +81,19 @@ public class SubCategoryPage {
 
 	public SubCategoryPage clickOnSearchField() {
 		searchfield.click();
-		return this; 
+		return this;
 	}
 
 	public SubCategoryPage selectCategoryToSearch() {
-		Select select = new Select(selectField);
-		select.selectByIndex(5);
+		PageUtility page = new PageUtility();
+		page.selectDropdownWithIndex(selectField, 5);
 		return this;
 
 	}
 
 	public SubCategoryPage enterSubCategoryTextToSearch(String subcategoryData) {
-
 		searchSubCategorytext.sendKeys(subcategoryData);
 		return this;
-
 	}
 
 	public void clickOnSearchButton() {

@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constants.Constants;
+import utilities.PageUtility;
+
 public class AdminUserPage {
 	public WebDriver driver;
 
@@ -72,8 +75,8 @@ public class AdminUserPage {
 	}
 
 	public AdminUserPage selectUserTypeOnUserTypeField() {
-		Select select = new Select(userTypeField);
-		select.selectByValue("staff");
+		PageUtility page = new PageUtility();
+		page.selectDropdownWithValue(userTypeField, "staff");
 		return this;
 	}
 
@@ -93,7 +96,7 @@ public class AdminUserPage {
 
 	public AdminUserPage selectTheUserTypeToSearch() {
 		Select select = new Select(searchUserType);
-		select.selectByVisibleText("Staff");
+		select.selectByVisibleText(Constants.ADMINUSERDROPDOWNVALUE);
 		return this;
 	}
 

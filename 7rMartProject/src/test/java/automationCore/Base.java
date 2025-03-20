@@ -23,11 +23,11 @@ public class Base {
 	FileInputStream fs;
 	public WebDriver driver;
 
-	@BeforeMethod(alwaysRun=true)
+	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
 	public void initializeBrowser(String browser) throws Exception {
-		prop=new Properties();
-		fs=new FileInputStream(Constants.CONFIGFILE);
+		prop = new Properties();
+		fs = new FileInputStream(Constants.CONFIGFILE);
 		prop.load(fs);
 		if (browser.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -44,33 +44,24 @@ public class Base {
 
 		driver.get(prop.getProperty("url"));
 		driver.manage().window().maximize();
-		WaitUtility wait=new WaitUtility();
+		WaitUtility wait = new WaitUtility();
 		wait.implicitWait(driver);
-		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 	}
 
-	@AfterMethod(alwaysRun=true)
-	// This method handles quitting the WebDriver after the test execution
-	// It also captures a screenshot if the test fails
-	// ITestResult-->interface in TestNG that manages lifecycle of a testcase result
-	public void driverQuit(ITestResult iTestResult) throws IOException// iTestResult is a interface
+	@AfterMethod(alwaysRun = true)
+
+	public void driverQuit(ITestResult iTestResult) throws IOException
 
 	{
-		// Check if the test case has failed
+
 		if (iTestResult.getStatus() == ITestResult.FAILURE)
 
 		{
-			// If the test fails, take a screenshot
-			// Create an instance of ScreenshotUtility
 			ScreenshotUtility screenShot = new ScreenshotUtility();
-
-			// Capture a screenshot with the test name
 			screenShot.getScreenshot(driver, iTestResult.getName());
 
 		}
 
-		
-	// Quit the WebDriver session
 		driver.quit();
 
 	}
