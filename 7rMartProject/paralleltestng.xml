@@ -15,10 +15,10 @@
 	<test name="Test2">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="testScript.HomeTest">
+			<class name="testScript.AdminUserTest">
 				<methods>
 					<include
-						name="verifyWhetherUserCanLogOutFromHomePageAfterLoginToThePage"></include>
+						name="verifyWhetherUserIsAbleToAddNewUsersToUsersList"></include>
 				</methods>
 			</class>
 		</classes>

@@ -12,7 +12,7 @@ public class LoginPage {
 
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver, this);// PageFactory is a class .initElements() is a method to initialize
+		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//input[@name='username']")
@@ -27,6 +27,8 @@ public class LoginPage {
 	private WebElement dashBoard;
 	@FindBy(xpath = "//b[text()='7rmart supermarket']")
 	private WebElement title;
+	@FindBy(xpath ="//h5[contains(text(),'Alert!')]")
+	private WebElement alert;
 
 	public LoginPage enterUsernameOnUsernameField(String username) {
 		userNameField.sendKeys(username);
@@ -56,6 +58,9 @@ public class LoginPage {
 
 	public boolean isTitleDisplayed() {
 		return title.isDisplayed();
+	}
+	public boolean isAlertDisplayed() {
+		return alert.isDisplayed();
 	}
 
 }

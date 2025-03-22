@@ -56,14 +56,19 @@ public class LoginTest extends Base {
 		login.enterUsernameOnUsernameField(username).enterPasswordOnPasswordField(password).clickOnCheckbox()
 				.clickOnSignInButton();
 	
-		boolean isTitleDisplayed = login.isTitleDisplayed();
-		Assert.assertTrue(isTitleDisplayed, Messages.INVALIDCREDENTIALERROR);
+		/*boolean isTitleDisplayed = login.isTitleDisplayed();
+		Assert.assertTrue(isTitleDisplayed, Messages.INVALIDCREDENTIALERROR);*/
+		boolean isAlertDisplayed = login.isAlertDisplayed();
+		Assert.assertTrue(isAlertDisplayed, Messages.INVALIDCREDENTIALERROR);
+		
 
 	}
 
 	@DataProvider(name = "loginProvider")
 	public Object[][] getDataFromDataProvider() throws IOException {
-		return new Object[][] { new Object[] { "admin", "admin" }, new Object[] { "admin", "ad" },
+		return new Object[][] { 
+			new Object[] { "admi", "adm" }, 
+			new Object[] { "admin", "ad" },
 				new Object[] { "admi", "admin" }, new Object[] { "adm", "adm" },
 				// read from Excel
 				// new Object[] {ExcelUtility.readStringData(0, 0,

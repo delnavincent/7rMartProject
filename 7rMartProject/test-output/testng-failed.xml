@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="browser" value="chrome"/>
-  <listeners>
-    <listener class-name="listeners.Listeners"/>
-  </listeners>
-  <test thread-count="5" name="Test(failed)">
+<suite thread-count="3" parallel="tests" name="Failed suite [ParallelTesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="3" parallel="tests" name="Test2(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="testScript.HomeTest">
+      <class name="testScript.AdminUserTest">
         <methods>
           <include name="initializeBrowser"/>
-          <include name="verifyWhetherUserCanLogOutFromHomePageAfterLoginToThePage"/>
           <include name="driverQuit"/>
+          <include name="verifyWhetherUserIsAbleToAddNewUsersToUsersList"/>
         </methods>
-      </class> <!-- testScript.HomeTest -->
+      </class> <!-- testScript.AdminUserTest -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Test2(failed) -->
+  <test thread-count="3" parallel="tests" name="Test1(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="initializeBrowser"/>
+          <include name="driverQuit"/>
+          <include name="verifyUserLoginWithValidUsernameAndValidPassword"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [ParallelTesting] -->
