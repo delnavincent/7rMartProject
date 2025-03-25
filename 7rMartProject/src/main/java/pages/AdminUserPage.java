@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import constants.Constants;
+import utilities.ExcelUtility;
 import utilities.PageUtility;
 
 public class AdminUserPage {
@@ -95,8 +96,8 @@ public class AdminUserPage {
 	}
 
 	public AdminUserPage selectTheUserTypeToSearch() {
-		Select select = new Select(searchUserType);
-		select.selectByVisibleText(Constants.ADMINUSERDROPDOWNVALUE);
+		PageUtility page = new PageUtility();
+		page.selectDropdownWithVisibleText(searchUserType, "Staff");
 		return this;
 	}
 
